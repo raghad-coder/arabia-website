@@ -1,18 +1,14 @@
 import Navbar from './components/Navbar';
+import Hero from './sections/Hero'; // استيراد الهيرو
 
 function App() {
   return (
-    <main className="relative min-h-screen bg-enso-dark">
+    <main className="bg-enso-dark">
       <Navbar />
+      <Hero />
       
-      {/* هنا سنضع الهيرو سيكشن لاحقاً */}
-      <section className="h-screen flex items-center justify-center">
-        <h1 className="text-white text-5xl font-bold text-center">
-          Creating <br />
-          <span className="text-enso-green">Transformative</span> <br />
-          Experiences
-        </h1>
-      </section>
+      {/* الأقسام القادمة ستوضع هنا */}
+      <div className="h-[50vh]"></div> {/* مساحة مؤقتة للتجربة */}
     </main>
   )
 }
