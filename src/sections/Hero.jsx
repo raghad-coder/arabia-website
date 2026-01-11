@@ -1,5 +1,7 @@
 import React from 'react';
-import SaudiArabia from '../assets/SaudiArabia.jfif'
+import SaudiArabia from '../assets/SaudiArabia.jfif';
+import { motion } from 'framer-motion';
+
 
 const Hero = () => {
   return (
@@ -19,34 +21,43 @@ const Hero = () => {
 
       {/* 2. المحتوى النصي */}
       <div className="relative z-10 text-center px-4 max-w-4xl">
-        <p className="text-enso-green uppercase tracking-[0.3em] text-sm mb-4 font-medium">
+        {/* تحريك النص الصغير */}
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-enso-green uppercase tracking-[0.3em] text-sm mb-4 font-medium"
+        >
           Event Management Leader in KSA
-        </p>
+        </motion.p>
         
-        <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-8">
+        {/* تحريك العنوان الكبير */}
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-white text-5xl md:text-7xl font-bold leading-tight mb-8"
+        >
           Creating <br />
           <span className="italic font-light">Transformative</span> <br />
           Experiences
-        </h1>
+        </motion.h1>
 
-        {/* 3. أزرار الأكشن (Buttons) */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+        {/* تحريك الأزرار */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col md:flex-row items-center justify-center gap-4"
+        >
           <button className="px-8 py-3 bg-enso-green text-white rounded-full font-medium hover:bg-white hover:text-enso-green transition-all duration-300 w-48">
             Contact Us
           </button>
           <button className="px-8 py-3 border border-white/50 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300 w-48">
             Our Profile
           </button>
-        </div>
+        </motion.div>
       </div>
-
-      {/* 4. سهم التوجيه للأسفل (اختياري لجمال التصميم) */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center py-2">
-          <div className="w-1 h-2 bg-enso-green rounded-full"></div>
-        </div>
-      </div>
-      
     </section>
   );
 };

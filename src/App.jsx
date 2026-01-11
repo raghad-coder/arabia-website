@@ -3,6 +3,7 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import Stats from './sections/Stats';
+import About from './sections/About';
 import ProgressBar from './components/ProgressBar'; // سننشئه الآن
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <ProgressBar />
       <Navbar />
       <Hero />
+      <About />
       <Stats />
       {/* سنضيف أقساماً أخرى هنا لاحقاً لكي تشعر بقوة التمرير */}
       <div className="h-[200vh]"></div> 
