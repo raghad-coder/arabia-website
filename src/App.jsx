@@ -1,18 +1,42 @@
+import { useEffect } from 'react';
+import Lenis from 'lenis';
 import Navbar from './components/Navbar';
-import Hero from './sections/Hero'; // استيراد الهيرو
+import Hero from './sections/Hero';
 import Stats from './sections/Stats';
+import ProgressBar from './components/ProgressBar'; // سننشئه الآن
 
 function App() {
+  useEffect(() => {
+    // إعداد مكتبة Lenis للتمرير الناعم
+    const lenis = new Lenis({
+      duration: 1.2,   // سرعة التمرير
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // معادلة الحركة الانسيابية
+      smoothWheel: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // تنظيف المكتبة عند إغلاق المكون
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <main className="bg-enso-dark">
+      <ProgressBar />
       <Navbar />
       <Hero />
       <Stats />
-      
-      {/* الأقسام القادمة ستوضع هنا */}
-      <div className="h-[50vh]"></div> {/* مساحة مؤقتة للتجربة */}
+      {/* سنضيف أقساماً أخرى هنا لاحقاً لكي تشعر بقوة التمرير */}
+      <div className="h-[200vh]"></div> 
     </main>
-  )
+  );
 }
 
 export default App;

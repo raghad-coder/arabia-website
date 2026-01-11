@@ -1,0 +1,23 @@
+import React from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
+
+const ProgressBar = () => {
+  // استخدام Hook من framer-motion لمراقبة التمرير
+  const { scrollYProgress } = useScroll();
+  
+  // جعل حركة الشريط ناعمة (Spring effect)
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-1 bg-enso-green z-[100] origin-left"
+      style={{ scaleX }}
+    />
+  );
+};
+
+export default ProgressBar;
