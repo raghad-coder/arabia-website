@@ -1,4 +1,5 @@
 import React from 'react';
+import SaudiArabia from '../assets/SaudiArabia.jfif'
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         {/* سنضع صورة مؤقتة حالياً، ويمكنك استبدالها بفيديو لاحقاً */}
         <img 
-          src="https://images.unsplash.com/photo-1586724230411-44933923f790?q=80&w=2070&auto=format&fit=crop" 
+          src={SaudiArabia} 
           alt="Saudi Arabia Backdrop"
           className="w-full h-full object-cover"
         />
