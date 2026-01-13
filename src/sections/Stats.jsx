@@ -20,7 +20,7 @@ const Stats = () => {
 
   return (
     // ربطنا الـ ref هنا ليعرف البرنامج متى نصل لهذا القسم
-    <section ref={ref} className="bg-enso-green py-20 px-6">
+    <section ref={ref} className=" w-full bg-enso-green py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-white text-4xl font-bold mb-16 flex items-center gap-2">
           enso <span className="font-light italic">in numbers</span>

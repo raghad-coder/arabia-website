@@ -14,7 +14,7 @@ const Work = () => {
     { id: 4, title: "Event 4", category: "Exhibitions", videoSrc: EventFour },
   ];
   return (
-    <section className="py-24 px-6 bg-enso-dark">
+    <section className="w-full py-24 px-6 bg-enso-dark">
       <div className="max-w-7xl mx-auto">
         {/* العنوان الرئيسي */}
         <div className="mb-12">

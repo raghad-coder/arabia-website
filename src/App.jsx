@@ -6,6 +6,7 @@ import Stats from './sections/Stats';
 import About from './sections/About';
 import ProgressBar from './components/ProgressBar'; // سننشئه الآن
 import Work from './sections/Work';
+import Clients from './sections/Clients';
 
 function App() {
   useEffect(() => {
@@ -30,12 +31,13 @@ function App() {
   }, []);
 
   return (
-    <main className="bg-enso-dark">
+    <main className="bg-enso-dark w-full min-h-screen">
       <ProgressBar />
       <Navbar />
       <Hero />
       <About />
       <Work />
+      <Clients />
       <Stats />
       {/* سنضيف أقساماً أخرى هنا لاحقاً لكي تشعر بقوة التمرير */}
       <div className="h-[200vh]"></div> 
