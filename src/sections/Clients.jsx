@@ -18,14 +18,43 @@ const Clients = () => {
   return (
     <section className="py-20 bg-enso-dark overflow-hidden border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6 mb-12">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-white text-sm tracking-[0.4em] uppercase"
-        >
-          Our Clients
-        </motion.h2>
+        {/* منطقة العنوان المطورة */}
+        <div className="max-w-6xl mx-auto px-6 mb-20">
+          <div className="flex flex-col items-start">
+            {/* نص علوي صغير وبسيط */}
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-enso-green text-xs font-bold uppercase tracking-[0.6em] mb-4"
+            >
+              Trust & Collaboration
+            </motion.span>
+
+            {/* العنوان الرئيسي بشكل فخم */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-white text-4xl md:text-6xl font-bold flex flex-col md:flex-row md:items-center gap-4"
+            >
+              Our Strategic
+              <span className="italic font-light text-white/50 border-l-4 border-enso-green pl-4 md:border-none md:pl-0">
+                Partners
+              </span>
+            </motion.h2>
+
+            {/* خط ديكوري حديث */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "100px" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="h-[2px] bg-enso-green mt-8"
+            />
+          </div>
+        </div>
       </div>
 
       {/* حاوية الحركة */}

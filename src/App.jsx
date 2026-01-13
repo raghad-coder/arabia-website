@@ -7,6 +7,7 @@ import About from './sections/About';
 import ProgressBar from './components/ProgressBar'; // سننشئه الآن
 import Work from './sections/Work';
 import Clients from './sections/Clients';
+import Testimonials from './sections/Testimonials';
 
 function App() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
       <Work />
       <Clients />
       <Stats />
+      <Testimonials />
       {/* سنضيف أقساماً أخرى هنا لاحقاً لكي تشعر بقوة التمرير */}
       <div className="h-[200vh]"></div> 
     </main>

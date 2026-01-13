@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // إذا نزل المستخدم أكثر من 20 بكسل، تبدأ الخلفية في الظهور
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    // nav: الحاوية الأساسية. جعلناها absolute لتطفو فوق الفيديو/الخلفية
-    // w-full: لتأخذ عرض الشاشة بالكامل
-    // z-50: لضمان ظهورها فوق أي عنصر آخر في الموقع
-    <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 md:px-12">
-      
-      {/* جهة اليسار: اللوجو */}
+    <nav
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 px-8 py-5 md:px-16 flex justify-between items-center ${
+        isScrolled
+          ? "bg-enso-dark/90 backdrop-blur-lg border-b border-white/5 py-4" // يغمق قليلاً عند النزول
+          : "bg-transparent py-7" // شفاف تماماً في البداية
+      }`}
+    >
+      {/* اللوجو (كما أضفناه أعلاه) */}
       <div className="flex items-center">
-        {/* سنضع نصاً مؤقتاً "enso" بنفس ستايل الفيديو حتى تجلب اللوجو */}
-        <span className="text-white text-3xl font-bold tracking-tighter">
+        <span className="text-white text-4xl font-black tracking-tighter">
           enso<span className="text-enso-green">.</span>
         </span>
       </div>
 
-      {/* جهة اليمين: أيقونة المنيو */}
-      <div className="cursor-pointer">
-        <div className="w-10 h-10 border border-white/30 rounded-full flex flex-col items-center justify-center gap-1 hover:border-enso-green transition-all">
-          <span className="w-5 h-[2px] bg-white"></span>
-          <span className="w-5 h-[2px] bg-white"></span>
-          <span className="w-5 h-[2px] bg-white"></span>
+      {/* أيقونة المنيو - مطابقة للصورة */}
+      <div className="cursor-pointer group">
+        <div className="w-14 h-14 border-2 border-white/20 rounded-full flex flex-col items-center justify-center gap-1.5 hover:border-enso-green transition-all duration-300">
+          <span className="w-6 h-[2.5px] bg-white group-hover:bg-enso-green"></span>
+          <span className="w-6 h-[2.5px] bg-white group-hover:bg-enso-green"></span>
+          <span className="w-6 h-[2.5px] bg-white group-hover:bg-enso-green"></span>
         </div>
       </div>
-
     </nav>
   );
 };

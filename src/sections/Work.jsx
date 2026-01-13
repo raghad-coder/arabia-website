@@ -22,7 +22,7 @@ const Work = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-white text-sm tracking-[0.4em] uppercase mb-4"
+            className=" font-italic-playfair text-enso-green text-3xl "
           >
             Instagram Feed
           </motion.h2>

@@ -13,8 +13,8 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-enso-green text-3xl font-bold mb-2">ABOUT US</h2>
-          <h3 className="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="font-italic-playfair text-enso-green text-3xl font-bold mb-2">ABOUT US</h2>
+          <h3 className=" font-italic-playfair text-enso-green text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
             enso Arabia : Crafting Mega-Experiences for 30+ Years.
           </h3>
           <p className="text-gray-400 text-lg mb-8 leading-relaxed">

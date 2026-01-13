@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap');
+
 @import "tailwindcss";
 
 body {
   background-color: #00150f;
   color: white;
   margin: 0;
+  font-family: 'Inter', sans-serif; /* الخط الافتراضي للنصوص */
+  overflow-x: hidden;
 }
 
-/* كلاس مخصص للتوهج الأخضر */
-.enso-glow-text {
-  transition: all 0.5s ease;
+/* تخصيصات العناوين لسهولة الاستخدام */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.font-italic-playfair {
+  font-family: 'Playfair Display', serif;
+  text-transform: none; /* ليبقى شكل الخط المائل طبيعياً */
 }
 
 .enso-glow-text:hover {

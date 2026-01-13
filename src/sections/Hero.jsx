@@ -36,10 +36,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-white text-5xl md:text-7xl font-bold leading-tight mb-8"
+          className=" font-italic-playfair text-enso-green text-white text-5xl md:text-7xl font-bold leading-tight mb-8"
         >
           Creating <br />
-          <span className="italic font-light">Transformative</span> <br />
+          <span className="font-italic-playfair text-enso-green">Transformative</span> <br />
           Experiences
         </motion.h1>
 
